@@ -1,40 +1,48 @@
 #!/bin/bash
-# Assertiva Pombo
+# Pombo Docker
+#by Slackwarecps
 
-echo '==========================================================='
-echo '|           POMBO ASSERTIVA     1.0                        '
-echo '==========================================================='
-PS3='Escolha seu pru! pru! : '
+echo '======================================================================================='
+echo '|           POMBO DOCKER            1.0                                               |'
+echo '======================================================================================='
+PS3='choise your seu pru! pru! : '
 options=("docker:apagar containers" "Subir Backend" "backend:reiniciar" "Sair pru!")
 options2=(1,2,3,4)
-echo "1) docker:apagar containers" 
-echo "2) Subir Backend" 
-echo "3) backend:reiniciar" 
-echo "4) Sair pru!"
-echo "5) pru!"
-echo "6) containers Rodando... Docker ps"
-echo "7) Imagens Disponiveis docker images"
-echo "8) todos os containers parados e rodando Docker ps -a"
+echo '1) docker:erase all containers                      | 9) Setup pombodocker'
+echo '2) enable sonarqube                                 | X)'
+echo '3) disable sonarqube"                               | X)'  
+echo '4) exit                                             | X)'
+echo '5) pru!                                             | X)'
+echo '6) containers running... (Docker ps)                | X)'
+echo '7) Available Images (docker images)                 | X)'
+echo '8) Show All containers - ON and OFF (docker ps -a)  | X)'
 
 echo ""
 echo ""
-echo "Digite a opção:"
+echo "Type your option:"
 read n
 case $n in
     1)
      clear
+     echo "killing all containers "
+     sleep 1
     LISTA=$(docker ps -q)
     docker stop -t 0 $LISTA
     pombo
     ;;
-     5)echo "opcao 1"
-     ;;
+
     
-    2) docker images 
+    2) docker start pombosonarqube
        sleep 2
+       echo 'acess it using http://localhost:9000'
+       sleep 3
+       clear
+       
        pombo
        ;;
-    3) docker run -d fabioalvaro/node npm start
+    3) docker stop -t 0 $(docker ps -aqf "name=pombosonarqube")
+      
+      pombo
     
     ;;
     4) commands for  opn 4;;
@@ -43,6 +51,15 @@ case $n in
     docker ps
     pombo
     ;;
+    5)
+    clear
+    echo "pru! pru!"
+    sleep 1
+    echo "wait please..."
+     sleep 2
+     clear
+     pombo
+     ;;
     7)
     clear
     docker images
@@ -53,6 +70,17 @@ case $n in
     docker ps -a
     pombo    
     ;;    
+    9)
+    clear
+    docker run -d --name pombosonarqube -p 9000:9000 -p 9092:9092 sonarqube
+    pombo    
+    ;; 
     
-    *) invalid option;;
+    *) 
+    clear
+    echo 'not a valid option try again! pru!'
+    sleep 1
+    clear
+    pombo
+    ;;
 esac
