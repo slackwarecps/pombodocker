@@ -2,7 +2,7 @@
 pru! pru! pru!
 
 
-#how to install
+#how to install - Step 1
 
 
     wget https://raw.githubusercontent.com/slackwarecps/pombodocker/master/pombo
@@ -13,7 +13,7 @@ pru! pru! pru!
 
 
 
-## how to use sonaqube integrated
+## how to use sonaqube integrated Step 2
 docker run -d --name pombosonarqube -p 9000:9000 -p 9092:9092 sonarqube
 
 
