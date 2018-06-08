@@ -5,9 +5,8 @@ pru! pru! pru!
 #how to install
 
 
-    wget https://github.com/slackwarecps/pombodocker/blob/master/pombo
-    chmod +x pombo
-    chmod 0777 pombo
+    wget https://raw.githubusercontent.com/slackwarecps/pombodocker/master/pombo
+    chmod +x pombo && chmod 0777 pombo
     sudo mv pombo ~bin
     pombo
   
