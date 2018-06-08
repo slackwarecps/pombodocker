@@ -16,4 +16,4 @@ docker run -d --name pombosonarqube -p 9000:9000 -p 9092:9092 sonarqube
 
 
 # Screenshot
-![Image of pombodocker](img/pombodocker1.png)
+![Image of pombodocker](img/pombodocker2.png)
