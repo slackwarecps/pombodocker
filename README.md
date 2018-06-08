@@ -7,6 +7,7 @@ pru! pru! pru!
 
     wget https://github.com/slackwarecps/pombodocker/blob/master/pombo
     sudo mv pombo ~bin
+    pombo
   
 
 
