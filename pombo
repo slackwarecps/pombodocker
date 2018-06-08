@@ -34,7 +34,7 @@ case $n in
     
     2) docker start pombosonarqube
        sleep 2
-       echo 'acess it using http://localhost:9000'
+       echo 'acess it using http://localhost:9077'
        sleep 3
        clear
        
