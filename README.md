@@ -14,7 +14,10 @@ pru! pru! pru!
 
 
 ## how to use sonaqube integrated Step 2
-docker run -d --name pombosonarqube -p 9000:9000 -p 9092:9092 sonarqube
+Please verify if you are using on default port 9000. feel free to modify the port to work in your environment
+
+
+    docker run -d --name pombosonarqube -p 9000:9000 -p 9092:9092 sonarqube
 
 
 # Screenshot
