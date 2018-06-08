@@ -18,6 +18,7 @@ Please verify if you are using on default port 9000. feel free to modify the por
 
 
     docker run -d --name pombosonarqube -p 9000:9000 -p 9092:9092 sonarqube
+    pombo
 
 
 # Screenshot
