@@ -45,7 +45,11 @@ case $n in
       pombo
     
     ;;
-    4) commands for  opn 4;;
+    4) 
+    clear
+    echo 'bye bye! pru!'
+    
+    exit;;
     6) 
     clear
     docker ps
@@ -72,7 +76,7 @@ case $n in
     ;;    
     9)
     clear
-    docker run -d --name pombosonarqube -p 9000:9000 -p 9092:9092 sonarqube
+    docker run -d --name pombosonarqube -p 9077:9000 -p 9092:9092 sonarqube
     pombo    
     ;; 
     
