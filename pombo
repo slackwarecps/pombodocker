@@ -1,0 +1,58 @@
+#!/bin/bash
+# Assertiva Pombo
+
+echo '==========================================================='
+echo '|           POMBO ASSERTIVA     1.0                        '
+echo '==========================================================='
+PS3='Escolha seu pru! pru! : '
+options=("docker:apagar containers" "Subir Backend" "backend:reiniciar" "Sair pru!")
+options2=(1,2,3,4)
+echo "1) docker:apagar containers" 
+echo "2) Subir Backend" 
+echo "3) backend:reiniciar" 
+echo "4) Sair pru!"
+echo "5) pru!"
+echo "6) containers Rodando... Docker ps"
+echo "7) Imagens Disponiveis docker images"
+echo "8) todos os containers parados e rodando Docker ps -a"
+
+echo ""
+echo ""
+echo "Digite a opção:"
+read n
+case $n in
+    1)
+     clear
+    LISTA=$(docker ps -q)
+    docker stop -t 0 $LISTA
+    pombo
+    ;;
+     5)echo "opcao 1"
+     ;;
+    
+    2) docker images 
+       sleep 2
+       pombo
+       ;;
+    3) docker run -d fabioalvaro/node npm start
+    
+    ;;
+    4) commands for  opn 4;;
+    6) 
+    clear
+    docker ps
+    pombo
+    ;;
+    7)
+    clear
+    docker images
+    pombo    
+    ;;
+    8)
+    clear
+    docker ps -a
+    pombo    
+    ;;    
+    
+    *) invalid option;;
+esac
