@@ -13,7 +13,7 @@ pru! pru! pru!
 
 
 
-#how to use sonaqube integrated
+## how to use sonaqube integrated
 docker run -d --name pombosonarqube -p 9000:9000 -p 9092:9092 sonarqube
 
 
